@@ -1,40 +1,40 @@
 import random
-choices = ["Rock", "Paper", "Scissors"]
+choices = ["石头", "布", "剪刀"]
 computer = random.choice(choices)
 player = False
 cpu_score = 0
 player_score = 0
 while True:
-    player = input("Rock, Paper or  Scissors?").capitalize()
+    player = input("石头, 剪刀 或 布?").capitalize()
     # 判断游戏者和电脑的选择
     if player == computer:
-        print("Tie!")
-    elif player == "Rock":
-        if computer == "Paper":
-            print("You lose!", computer, "covers", player)
+        print("平局!")
+    elif player == "石头":
+        if computer == "布":
+            print("你输了!", computer, "包住", player)
             cpu_score+=1
         else:
-            print("You win!", player, "smashes", computer)
+            print("你赢了!", player, "砸了", computer)
             player_score+=1
-    elif player == "Paper":
-        if computer == "Scissors":
-            print("You lose!", computer, "cut", player)
+    elif player == "布":
+        if computer == "剪刀":
+            print("你输了!", computer, "剪了", player)
             cpu_score+=1
         else:
-            print("You win!", player, "covers", computer)
+            print("你赢了!", player, "包住", computer)
             player_score+=1
-    elif player == "Scissors":
-        if computer == "Rock":
-            print("You lose...", computer, "smashes", player)
+    elif player == "剪刀":
+        if computer == "石头":
+            print("你输了!", computer, "砸了", player)
             cpu_score+=1
         else:
-            print("You win!", player, "cut", computer)
+            print("你赢了!", player, "剪了", computer)
             player_score+=1
-    elif player=='E':
-        print("Final Scores:")
-        print(f"CPU:{cpu_score}")
-        print(f"Plaer:{player_score}")
+    elif player=='结束':
+        print("最终分数:")
+        print(f"输:{cpu_score}")
+        print(f"赢:{player_score}")
         break
     else:
-        print("That's not a valid play. Check your spelling!")
+        print("这不是一个有效的输入，请重新输入!")
     computer = random.choice(choices)
